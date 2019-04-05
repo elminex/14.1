@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,48 +9,58 @@
     <link rel="stylesheet" type="text/css" href="vendor/normalize.css">
     <link rel="stylesheet" type="text/css" href="vendor/flickity.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    
+
 </head>
+
 <body>
     <header class="header">
         <h1 class="header__title">Bo ładne statki są ładne</h1>
     </header>
     <div class="carousel__wrapper">
         <button class="carousel__button" id="carousel-button">To begining</button>
-        <div class="carousel">
-            <div class="carousel-cell" id="carousel-cell-1"
-                style="background-image: url(https://images.pexels.com/photos/33689/ship-boat-lake-garda-italy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-                <div class="container">
-                    <p class="container-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptates repellat ipsa iste nemo inventore architecto. Deserunt error ipsum ducimus alias consectetur corrupti, labore, dolorem ratione unde, nesciunt obcaecati veritatis!</p>
-                </div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell-2"
-                style="background-image: url(https://images.pexels.com/photos/396614/pexels-photo-396614.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-                <div class="container">
-                    <p class="container-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptates repellat ipsa iste nemo inventore architecto. Deserunt error ipsum ducimus alias consectetur corrupti, labore, dolorem ratione unde, nesciunt obcaecati veritatis!</p>
-                </div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell-3"
-                style="background-image: url(https://images.pexels.com/photos/173910/pexels-photo-173910.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-                <div class="container">
-                    <p class="container-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptates repellat ipsa iste nemo inventore architecto. Deserunt error ipsum ducimus alias consectetur corrupti, labore, dolorem ratione unde, nesciunt obcaecati veritatis!</p>
-                </div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell-4"
-                style="background-image: url(https://images.pexels.com/photos/843085/pexels-photo-843085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-                <div class="container">
-                    <p class="container-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptates repellat ipsa iste nemo inventore architecto. Deserunt error ipsum ducimus alias consectetur corrupti, labore, dolorem ratione unde, nesciunt obcaecati veritatis!</p>
-                </div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell-5"
-                style="background-image: url(https://images.pexels.com/photos/275691/pexels-photo-275691.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-                <div class="container">
-                    <p class="container-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptates repellat ipsa iste nemo inventore architecto. Deserunt error ipsum ducimus alias consectetur corrupti, labore, dolorem ratione unde, nesciunt obcaecati veritatis!</p>
-                </div>
-            </div>
+        <div class="carousel" id="carousel">
+
         </div>
         <div class="carousel__progress-bar"></div>
     </div>
+    <script id="carousel-template" type="x-tmpl-mustache">
+        <div class="carousel-cell" style="background-image: url( {{image}} )">
+            <div class="container">
+                <h2>{{title}}</h2>
+                {{{ description }}}
+            </div>
+        </div>
+    </script>
+    <script>
+        let data = [
+            {
+                image: 'https://images.pexels.com/photos/33689/ship-boat-lake-garda-italy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                title: 'Title 1',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            },
+            {
+                image: 'https://images.pexels.com/photos/396614/pexels-photo-396614.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                title: 'Title 2',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            },
+            {
+                image: 'https://images.pexels.com/photos/173910/pexels-photo-173910.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                title: 'Title 3',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            },
+            {
+                image: 'https://images.pexels.com/photos/843085/pexels-photo-843085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                title: 'Title 4',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            },
+            {
+                image: 'https://images.pexels.com/photos/275691/pexels-photo-275691.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                title: 'Title 5',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            },
+        ];
+    </script>
+    <script src="vendor/mustache.min.js"></script>
     <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="vendor/hash.js"></script>
     <script src="js/script.js"></script>

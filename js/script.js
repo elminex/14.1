@@ -1,3 +1,16 @@
+(function () {
+  const template = document.getElementById('carousel-template').innerHTML;
+  const output = document.getElementById('carousel');
+  let slides = '';
+  for (var i = 0; i < data.length; i++) {
+    console.log(data);
+    slides += Mustache.render(template, data[i]);
+  }
+  output.innerHTML = slides;
+
+})();
+
+
 var elem = document.querySelector('.carousel');
 var flkty = new Flickity( elem, {
   // options
