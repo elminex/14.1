@@ -16,7 +16,6 @@ const elem = document.querySelector('.carousel');
 window.initMap = function() {
   let map = new google.maps.Map(
       document.getElementById('map'), {zoom: 4, center: data[0].coords});
-  // The marker, positioned at Uluru
   for (let i = 0; i < data.length; i++) {
     let marker = new google.maps.Marker({ position: data[i].coords, map: map });
   }
