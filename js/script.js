@@ -1,5 +1,7 @@
-var elem = document.querySelector('.carousel');
-var flkty = new Flickity( elem, {
+const elem = document.querySelector('.carousel');
+const button = document.getElementById('carousel-button');
+const progressBar = document.querySelector('.carousel__progress-bar');
+let flkty = new Flickity( elem, {
   // options
   cellAlign: 'left',
     contain: true,
@@ -7,12 +9,9 @@ var flkty = new Flickity( elem, {
   pageDots: false,
 });
 
-const button = document.getElementById('carousel-button');
-button.addEventListener('click', function() {
-    flkty.select(0);
-})
-
-const progressBar = document.querySelector('.carousel__progress-bar')
+button.addEventListener('click', function () {
+  flkty.select(0);
+});
 
 flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
