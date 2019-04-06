@@ -17,28 +17,27 @@ window.initMap = function () {
   let clickMarker = false;
   let map = new google.maps.Map(
     document.getElementById('map'), { zoom: 4, center: data[0].coords });
-  
+
   for (let i = 0; i < data.length; i++) {
-    let marker = new google.maps.Marker({ position: data[i].coords, map: map });		
-		marker.addListener('click', function(){
-      flkty.select(i);
-debugger
-      console.log(clickMarker)
-		});	
+    let marker = new google.maps.Marker({ position: data[i].coords, map: map });
+    marker.addListener('click', function () {
+      if (flkty.selectedIndex !== i) {
+        clickMarker = true;
+        flkty.select(i);
+      }
+    });
   }
   flkty.on('change', function (index) {
     let destination = data[index].coords;
     if (clickMarker === false) {
-      console.log(clickMarker)
       map.panTo(destination);
       map.setZoom(10);
       clickMarker = false;
     }
     else {
-      console.log(clickMarker)
       clickMarker = false;
     }
-});
+  });
 }
 
 let flkty = new Flickity(elem, {
