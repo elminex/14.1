@@ -23,6 +23,9 @@
         </div>
         <div class="carousel__progress-bar"></div>
     </div>
+    <div class="map" id="map">
+
+    </div>
     <script id="carousel-template" type="x-tmpl-mustache">
         <div class="carousel-cell" style="background-image: url( {{image}} )">
             <div class="container">
@@ -35,28 +38,33 @@
         let data = [
             {
                 image: 'https://images.pexels.com/photos/33689/ship-boat-lake-garda-italy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                title: 'Title 1',
-                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                title: 'Le Vieux Port',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>',
+                coords: {lat: 43.549168, lng: 7.014273}
             },
             {
                 image: 'https://images.pexels.com/photos/396614/pexels-photo-396614.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                title: 'Title 2',
-                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                title: 'Port of Saint Tropez',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>',
+                coords: {lat: 43.272586, lng: 6.636281}
             },
             {
                 image: 'https://images.pexels.com/photos/173910/pexels-photo-173910.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                title: 'Title 3',
-                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                title: 'Marina Malaga, Real Club Mediterráneo',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>',
+                coords: {lat: 36.707989, lng: -4.413613}
             },
             {
                 image: 'https://images.pexels.com/photos/843085/pexels-photo-843085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                title: 'Title 4',
-                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                title: 'Isla Del Sol Yacht & Country Club',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>',
+                coords: {lat: 27.714417, lng: -82.715111}
             },
             {
                 image: 'https://images.pexels.com/photos/275691/pexels-photo-275691.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                title: 'Title 5',
-                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                title: 'Mina Rashid Marina',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>',
+                coords: {lat: 25.258828, lng: 55.277639}
             },
         ];
     </script>
@@ -64,6 +72,8 @@
     <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="vendor/hash.js"></script>
     <script src="js/script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQMIpT-SwzYWI-1UMLWf3NJvmIcQb3bPQ&callback=initMap"></script>
+
 </body>
 
 </html>
